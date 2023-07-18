@@ -10,9 +10,10 @@ const key = 'GmyLPHafWz8zF/AY9l+OdQ==bOENjcyCrvXEqPiU';
 const headers= {
   'X-Api-Key': key
 }
-const url = 'https://api.api-ninjas.com/v1/celebrity?name='+'Michael Jordan';
+const nombre = 'Michael Jordan';
+const url = 'https://api.api-ninjas.com/v1/celebrity?name='+nombre;
 useEffect (()=>{
-  Axios.get (url)
+  Axios.get (url, {headers})
   .then (rest=>{console.log(rest.data)}
   )
   .catch(error=>{console.log(error)})
