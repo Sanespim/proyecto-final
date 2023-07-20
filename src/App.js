@@ -25,7 +25,7 @@ function App() {
     </header>
     <Routes>
       <Route path='/favorites' element={<Favorites/>}/>
-      <Route path='/home' element={<SearchBar/>}/>
+      <Route path='/home' element={<Home/>}/>
       <Route path='/logout' element={<Logout/>}/>
       
     </Routes>
