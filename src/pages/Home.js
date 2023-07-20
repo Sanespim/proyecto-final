@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import Axios  from 'axios';
 import { useEffect, useState } from 'react';
+import Celebrities_List from '../components/Celebrities_List';
 
 
 const Home = ()=> {
@@ -12,12 +13,13 @@ const headers= {
   'X-Api-Key': key
 }
 const nombre = 'Michael Jordan';
-const url = process.env.REACT_APP_URL_APP+nombre;
+const url = process.env.REACT_APP_URL_APP;
 useEffect (()=>{
   Axios.get (url, {headers})
-  .then (rest=>{console.log(rest.data)
-  setCelebrity(rest.data)
-  console.log(celebrity)
+  .then (rest=>{
+  console.log(rest.data);
+  setCelebrity(rest.data);
+  console.log(celebrity[2]);
 })
   .catch(error=>{console.log(error)})
 },[]
@@ -25,27 +27,9 @@ useEffect (()=>{
   
   return(
      <div><h3>{user.name}</h3>
-     <div>
-      {celebrity.map(cel=>{return(
-        <Fragment>
-        <h4>{cel.name}</h4>
-        <h2>{cel.age}</h2>
-        {cel.occupation.map(prof=>{
-          return (
-            <p>{prof}</p>
-          )
-        }
-
-        )}
-        </Fragment>
-
-      )})}
-     </div>
      
-     </div>
-
-
-      
+     <Celebrities_List celebrities={celebrity}/>
+    </div>
     )
 }
 
