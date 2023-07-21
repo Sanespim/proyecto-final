@@ -16,7 +16,6 @@ const SearchBar = () => {
    function getCelData(){
     const key = process.env.REACT_APP_KEY;
     const headers = {'X-Api-Key': key }
-    const nombre = 'Michael Jordan'
     const url =  `${process.env.REACT_APP_URL_NAME}=${celebrity}`;
     Axios.get(url, {headers})
     .then(res=>{
