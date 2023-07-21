@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import Celebrities_List from '../components/Celebrities_List';
 
 
-
 const Home = ()=> {
   const {user} = useAuth0();
   const [celebrity, setCelebrity] = useState([]);
